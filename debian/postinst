@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for bondi-repo-keys
+# postinst script for aeltra-repo-keys
 #
 # see: dh_installdeb(1)
 
@@ -20,7 +20,7 @@ set -e
 
 case "$1" in
     configure)
-        /usr/bin/opkg-key populate
+        /usr/bin/aept-key populate
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

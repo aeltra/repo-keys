@@ -21,21 +21,21 @@ OFFLINE_ROOT=""
 ##############################################################################
 
 die() {
-    echo "opkg-key: $1" >&2
+    echo "aept-key: $1" >&2
     exit 1
 }
 
 usage() {
-    echo "Usage: opkg-key [options] command [arguments]"
+    echo "Usage: aept-key [options] command [arguments]"
     echo
-    echo "Manage opkg's list of trusted keys"
+    echo "Manage aept's list of trusted keys"
     echo
     echo "Commands and arguments:"
     echo "  add <file>          - Add the key contained in <file> ('-' for stdin)"
     echo "  del <keyid>         - Remove the key <keyid>"
     echo "  list                - List keys"
     echo "  reset               - Remove all keys, resetting the keyring"
-    echo "  populate            - Import keys from /usr/share/opkg/usign"
+    echo "  populate            - Import keys from /usr/share/aept/usign"
     echo "  help                - Print this usage message and exit"
     echo
     echo "Options:"
@@ -58,8 +58,8 @@ do_add() {
         die "cannot import this key as a trusted public key."
     fi
 
-    if [ ! -f "$OFFLINE_ROOT/etc/opkg/usign/trustdb/$FINGERPRINT" ]; then
-        cp "$1" "$OFFLINE_ROOT/etc/opkg/usign/trustdb/$FINGERPRINT"
+    if [ ! -f "$OFFLINE_ROOT/etc/aept/usign/trustdb/$FINGERPRINT" ]; then
+        cp "$1" "$OFFLINE_ROOT/etc/aept/usign/trustdb/$FINGERPRINT"
     fi
 }
 
@@ -68,17 +68,17 @@ do_del() {
         die "please supply a key-id."
     fi
 
-    if [ ! -f "$OFFLINE_ROOT/etc/opkg/usign/trustdb/$1" ]; then
+    if [ ! -f "$OFFLINE_ROOT/etc/aept/usign/trustdb/$1" ]; then
         die "given key-id not found."
     fi
 
-    rm -f "$OFFLINE_ROOT/etc/opkg/usign/trustdb/$1"
+    rm -f "$OFFLINE_ROOT/etc/aept/usign/trustdb/$1"
 }
 
 do_list() {
-    ls "$OFFLINE_ROOT/etc/opkg/usign/trustdb" | while read KEYFILE; do
+    ls "$OFFLINE_ROOT/etc/aept/usign/trustdb" | while read KEYFILE; do
         DESCRIPTION=$(
-            head -n1 "$OFFLINE_ROOT/etc/opkg/usign/trustdb/$KEYFILE" | sed \
+            head -n1 "$OFFLINE_ROOT/etc/aept/usign/trustdb/$KEYFILE" | sed \
                 -e 's/untrusted comment:[[:space:]]*//g' \
                 -e 's/|[[:space:]]*[^[:space:]]\+$//g'
         )
@@ -92,12 +92,12 @@ do_list() {
 }
 
 do_reset() {
-    find "$OFFLINE_ROOT/etc/opkg/usign/trustdb" \
+    find "$OFFLINE_ROOT/etc/aept/usign/trustdb" \
         -type f -exec rm -f '{}' ';'
 }
 
 do_populate() {
-    find "$OFFLINE_ROOT/usr/share/opkg/usign" -name "*.pub" -type f | \
+    find "$OFFLINE_ROOT/usr/share/aept/usign" -name "*.pub" -type f | \
     while read KEYFILE; do
         do_add "$KEYFILE"
     done

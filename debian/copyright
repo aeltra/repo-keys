@@ -1,8 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: bondi-repo-keys
-Source: https://github.com/yaybondi/repo-keys
+Upstream-Name: aeltra-repo-keys
 
 Files: *
-Copyright: 2020 Bondi Linux Project
+Copyright: 2020 Aeltra Linux Project
 License: undefined
  This repository/source tree contains auto-generated cryptographic keys.

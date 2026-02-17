@@ -6,11 +6,11 @@ export DH_VERBOSE = 1
 	dh $@
 
 override_dh_auto_install:
-	install -m 0755 -d debian/bondi-repo-keys/etc/opkg/usign/trustdb
-	install -m 0755 -d debian/bondi-repo-keys/usr/share/opkg/usign/bondi-repo-keys
-	install -m 0755 -d debian/bondi-repo-keys/usr/bin
-	
+	install -m 0755 -d debian/aeltra-repo-keys/etc/aept/usign/trustdb
+	install -m 0755 -d debian/aeltra-repo-keys/usr/share/aept/usign/aeltra-repo-keys
+	install -m 0755 -d debian/aeltra-repo-keys/usr/bin
+
 	install -m 0644 *.pub \
-		debian/bondi-repo-keys/usr/share/opkg/usign/bondi-repo-keys
-	install -m 0755 opkg-key \
-		debian/bondi-repo-keys/usr/bin
+		debian/aeltra-repo-keys/usr/share/aept/usign/aeltra-repo-keys
+	install -m 0755 aept-key \
+		debian/aeltra-repo-keys/usr/bin

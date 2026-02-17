@@ -1,14 +1,13 @@
-Source: bondi-repo-keys
+Source: aeltra-repo-keys
 Section: admin
 Priority: optional
 Maintainer: Tobias Koch <tobias.koch@gmail.com>
 Build-Depends: debhelper (>= 11)
 Standards-Version: 4.1.3
-Homepage: https://github.com/yaybondi/repo-keys
 
-Package: bondi-repo-keys
+Package: aeltra-repo-keys
 Architecture: all
 Depends: usign, ${misc:Depends}
-Description: Bondi OS repository usign signing keys (public keys)
+Description: Aeltra repository usign signing keys (public keys)
  This package contains the public portion of the repository signing keys of
- the Bondi OS distribution generated and processed with the usign utility.
+ the Aeltra distribution generated and processed with the usign utility.

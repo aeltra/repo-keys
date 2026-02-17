@@ -1,5 +1,5 @@
 #!/bin/sh
-# postrm script for bondi-repo-keys
+# postrm script for aeltra-repo-keys
 #
 # see: dh_installdeb(1)
 
