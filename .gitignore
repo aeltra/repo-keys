@@ -1,0 +1,5 @@
+/debian/.debhelper/
+/debian/aeltra-repo-keys.substvars
+/debian/aeltra-repo-keys/
+/debian/debhelper-build-stamp
+/debian/files
