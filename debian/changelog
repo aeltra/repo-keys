@@ -1,14 +1,5 @@
-aeltra-repo-keys (20200705.01-3) unstable; urgency=medium
+aeltra-repo-keys (20260902.01-1) unstable; urgency=medium
 
-  * Rename from bondi-repo-keys to aeltra-repo-keys.
-  * Rename opkg-key to aept-key, update paths from /etc/opkg to /etc/aept.
+  * Aeltra repository signing key 2026
 
-aeltra-repo-keys (20200705.01-2) unstable; urgency=medium
-
-  * Fix postinst script failure when aept is not installed.
-
-aeltra-repo-keys (20200705.01-1) unstable; urgency=medium
-
-  * Initial packaging
-
- -- Tobias Koch <tobias.koch@gmail.com>  Sun, 18 Oct 2020 14:49:13 +0200
+ -- Tobias Koch <tobias.koch@aeltra.eu>  Wed, 02 Sep 2026 23:36:43 +0300
